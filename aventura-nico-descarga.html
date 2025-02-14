@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descargar Aventura Nico</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f8ff;
+    }
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function verificarClave() {
+      const clave = document.getElementById("clave").value;
+      if (clave === "AX8070B") {
+        document.getElementById("descarga-seccion").style.display = "block";
+        document.getElementById("clave-seccion").style.display = "none";
+      } else {
+        alert("Clave incorrecta. Inténtalo de nuevo.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="clave-seccion">
+    <h1>Descargar Aventura Nico</h1>
+    <p>Introduce la clave para desbloquear la descarga:</p>
+    <input type="text" id="clave" placeholder="Introduce la clave">
+    <button onclick="verificarClave()">Verificar</button>
+  </div>
+
+  <div id="descarga-seccion" style="display: none;">
+    <h1>¡Clave correcta!</h1>
+    <p>Haz clic en el botón para descargar la carpeta comprimida:</p>
+    <a href="Aventura_Nico.zip" download>
+      <button>Descargar Aventura Nico</button>
+    </a>
+  </div>
+</body>
+</html>
